@@ -34,6 +34,7 @@ def open_txt(file_path):
 
     return new_list
 
+
 data_import = open_txt(customer_list)
 
 # print("initial read", data_import)

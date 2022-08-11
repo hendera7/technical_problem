@@ -54,13 +54,38 @@ def create_dictionary(data_list):
             temp_dict["longitude"] = float(item[3][13:-1])
         except ValueError or KeyError:
             print("Invalid Input")    
+        
         else:
             new_list.append(temp_dict)
+            # if new_list == []:
+            #     new_list.append(temp_dict)
+            # else:
+            #     for dict in new_list:
+            #         if temp_dict["name"] == dict["name"]:
+            #             print(temp_dict["name"], "Name already in use. Please enter unique name.")
+            #             break
+            #         elif temp_dict["user_id"] == dict["user_id"]:
+            #             print(temp_dict["name"], "User ID already in use. Please enter unique user ID.")
+            #             break
+            #         else:
+            #             new_list.append(temp_dict)
     
     return new_list
 
 working_data = create_dictionary(data_import)
 sorted_data = sorted(working_data, key=itemgetter('user_id'))  # sorts the list in ascending order by user_id
+
+
+def detect_dups(list_of_dicts):
+
+    temp_list = []
+    for dict in list_of_dicts:
+        temp_list.append(dict["user_id"])
+
+    print(temp_list)
+    return 0
+
+duplicate_test = detect_dups(sorted_data)
 
 
 sf_lat = 37.7866
@@ -118,3 +143,4 @@ def write_to_txt(list_input):
 
 
 write_to_txt(dist_list)
+

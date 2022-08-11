@@ -57,18 +57,6 @@ def create_dictionary(data_list):
         
         else:
             new_list.append(temp_dict)
-            # if new_list == []:
-            #     new_list.append(temp_dict)
-            # else:
-            #     for dict in new_list:
-            #         if temp_dict["name"] == dict["name"]:
-            #             print(temp_dict["name"], "Name already in use. Please enter unique name.")
-            #             break
-            #         elif temp_dict["user_id"] == dict["user_id"]:
-            #             print(temp_dict["name"], "User ID already in use. Please enter unique user ID.")
-            #             break
-            #         else:
-            #             new_list.append(temp_dict)
     
     return new_list
 
@@ -80,13 +68,21 @@ def detect_dups(list_of_dicts):
 
     temp_list = []
     for dict in list_of_dicts:
-        temp_list.append(dict["user_id"])
+        if dict["user_id"] in temp_list:
+            print(dict["user_id"], dict["name"], ": User ID already in use. Please use a unique user ID.")
+        else:
+            temp_list.append(dict["user_id"])
+    
+    temp_list_2 =[]
+    for dict in list_of_dicts:
+        if dict["name"] in temp_list_2:
+            print(dict["user_id"], dict["name"], ": Name already in use. Please use a unique user ID.")
+        else:
+            temp_list_2.append(dict["name"])
 
-    print(temp_list)
-    return 0
+    return "Duplicate testing complete"
 
-duplicate_test = detect_dups(sorted_data)
-
+# duplicate_test = detect_dups(sorted_data)
 
 sf_lat = 37.7866
 sf_lon = -122.41284
@@ -144,3 +140,9 @@ def write_to_txt(list_input):
 
 write_to_txt(dist_list)
 
+
+
+
+if __name__ == "__main__":
+    duplicate_test = detect_dups(sorted_data)
+    print(duplicate_test)

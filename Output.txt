@@ -36,3 +36,4 @@ NO INVITE
 {'user_id': 25, 'name': 'Unique Name', 'latitude': 34.87656, 'longitude': -122.435367, 'Distance': 323.588}
 {'user_id': 27, 'name': 'Enid Gallagher', 'latitude': 39.1225, 'longitude': -121.143333, 'Distance': 185.16}
 {'user_id': 28, 'name': 'Charlie Halligan', 'latitude': 37.807778, 'longitude': -123.714444, 'Distance': 114.388}
+{'user_id': 41, 'name': 'David Behan', 'latitude': 34.2158, 'longitude': -123.45678, 'Distance': 408.0}

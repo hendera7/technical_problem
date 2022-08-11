@@ -31,3 +31,4 @@
 { latitude: "38.080556", user_id: 23, name: "Eoin Gallagher", longitude: "-122.361944" }
 { latitude: "36.833502", user_id: 25, name: "David Behan", longitude: "-124.522366" }
 { latitude: "34.87656", user_id: 25, name: "Unique Name", longitude: "-122.435367" }
+{ latitude: "34.2158", user_id: 41, name: "David Behan", longitude: "-123.45678" }

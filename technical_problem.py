@@ -141,8 +141,6 @@ def write_to_txt(list_input):
 write_to_txt(dist_list)
 
 
-
-
 if __name__ == "__main__":
     duplicate_test = detect_dups(sorted_data)
     print(duplicate_test)

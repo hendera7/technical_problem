@@ -144,4 +144,3 @@ write_to_txt(dist_list)
 if __name__ == "__main__":
     duplicate_test = detect_dups(sorted_data)
     print(duplicate_test)
-    print(data_import)

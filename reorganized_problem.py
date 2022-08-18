@@ -30,11 +30,11 @@ def organize_list_to_dict(data_list):
     """
     working_list = data_list
 
-    for list in working_list:
+    for list in working_list:  # copies item at index 0 and moves it to index 3, then removes index 0
         list.insert(3, list[0])
         del list [0]
 
-    for list in working_list:
+    for list in working_list:  # removes unnecessary spaces in each item in the list
             for item in list:
                 if item[0] == " ":
                     item = item[1:]
@@ -42,7 +42,7 @@ def organize_list_to_dict(data_list):
                     item = item[2:]
 
     new_list = []
-    for item in data_list:
+    for item in data_list:  # converts to a dictionary
         try:
             temp_dict = {}
             temp_dict["user_id"] = int(item[0][10:])
@@ -63,7 +63,7 @@ def distance_calc(data_list):
     Calculates distance and adds distance as a key to each dictionary with the 
     appropriate value for each user
     """
-    for dict in data_list:
+    for dict in data_list:  # calculates distance and adds as a key:value to dictionary
         distance = dis_form(SF_LAT, dict["latitude"], SF_LON, dict["longitude"])
         dict["Distance"] = round(distance, 3)
 
@@ -79,12 +79,13 @@ def sort_data(data_list):
     invited = []
     not_invited = []
 
-    for dict in data_list:
+    for dict in data_list:  # sorts data based on distance of 100 km
         if dict["Distance"] <= 100:
             invited.append(dict)
         else:
             not_invited.append(dict)
 
+    # franken-formatting to organize data visually
     divider = ["-----------------------"]
     header_1 = ["INVITE"]
     header_2 = ["NO INVITE"]
@@ -146,5 +147,4 @@ write_to_txt(organized_list)
 if __name__ == "__main__":
     duplicate_test = detect_dups(sorted_data)
     print(duplicate_test)
-
 

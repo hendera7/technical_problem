@@ -1,6 +1,5 @@
 from distance_formula import distance as dis_form  # format for input: (lat1, lat2, lon1, lon2)
 from operator import itemgetter
-from math import radians, cos, sin, asin, sqrt
 
 
 CUSTOMER_LIST = 'customer_list.txt'
